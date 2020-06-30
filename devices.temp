@@ -1,0 +1,42 @@
+[
+    { 
+        "device_name": "r124", 
+        "device_ip": "10.99.4.1",
+        "status": "Up"
+    },
+    { 
+        "device_name": "r330a", 
+        "device_ip": "10.99.6.1",
+        "status": "Up"
+    },
+    { 
+        "device_name": "r101c", 
+        "device_ip": "10.99.3.1",
+        "status": "Up"
+    },
+    { 
+        "device_name": "r415", 
+        "device_ip": "10.99.2.1",
+        "status": "Up"
+    },
+    { 
+        "device_name": "rshop", 
+        "device_ip": "10.99.7.1",
+        "status": "Up"
+    },
+    { 
+        "device_name": "sw9400", 
+        "device_ip": "10.99.1.1",
+        "status": "Up"
+    },
+    { 
+        "device_name": "sw3850", 
+        "device_ip": "10.99.5.1",
+        "status": "Up"
+    },
+    { 
+        "device_name": "rsad", 
+        "device_ip": "10.61.4.49",
+        "status": "Up"
+    }
+]
