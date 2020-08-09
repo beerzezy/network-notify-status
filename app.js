@@ -1,12 +1,12 @@
 const express = require('express')
-const app = express()
+const bodyParser = require('body-parser')
 const ping = require('ping')
-const bodyParser = require('body-parser');
 
 const config = require('./config')
 const { PORT } = config
 
-app.use(bodyParser);
+const app = express()
+app.use(bodyParser.json())
 
 require('./cron-jobs.js')
 
