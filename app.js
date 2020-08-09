@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
 const ping = require('ping')
+const bodyParser = require('body-parser');
 
 const config = require('./config')
 const { PORT } = config
+
+app.use(bodyParser);
 
 require('./cron-jobs.js')
 
@@ -16,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/trapreceiver', (req, res) => {
-  console.log('Trap Receiver')
+  console.log('Trap Receiver', req.body)
 
   res.sendStatus(200)
 });
@@ -24,3 +27,20 @@ app.post('/api/trapreceiver', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server start on port: ${PORT}`)
 })
+
+async function sendTrapMessageToLine() {
+  let token = 'oh9PA0x5oFNDd83fUZRRwlhO44sseTkZFbDRNoGZmQF'
+
+  const { data } = await axios({
+    method: 'POST',
+    url: 'https://notify-api.line.me/api/notify',
+    data: qs.stringify({
+      message: `send Trap Message Test`
+    }),
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': `Bearer ${token}`
+    }
+  })
+  return data
+}
