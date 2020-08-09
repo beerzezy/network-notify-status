@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
   });
 });
 
+app.post('/api/trapreceiver', (req, res) => {
+  console.log('Trap Receiver')
+
+  res.sendStatus(200)
+});
+
 app.listen(PORT, () => {
   console.log(`Server start on port: ${PORT}`)
 })
